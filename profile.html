@@ -1,0 +1,78 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-background"></div>
+    
+    <div class="auth-card">
+        <div class="auth-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
+            </svg>
+            <h1>TaskMaster</h1>
+        </div>
+
+        <form action="{{ url_for('profile') }}" method="POST" class="auth-form" id="profile-form">
+            <h2>Profile Settings</h2>
+            <p class="auth-subtitle">Update your account details below</p>
+            
+            <div class="input-group">
+                <input type="text" name="username" value="{{ user.username }}" placeholder="Username" required>
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <div class="input-group">
+                <input type="email" name="email" value="{{ user.email }}" placeholder="Email" required>
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="current_password" placeholder="Current Password" required>
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="new_password" placeholder="New Password (leave blank to keep current)">
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <div class="input-group">
+                <input type="password" name="confirm_password" placeholder="Confirm New Password">
+                <span class="input-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+                    </svg>
+                </span>
+            </div>
+            
+            <button type="submit" class="auth-button">Update Profile</button>
+            
+            <form action="{{ url_for('delete_account') }}" method="POST" class="auth-form" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.');">
+                <button type="submit" class="auth-button" style="background: var(--error); margin-top: 1rem;">Delete Account</button>
+            </form>
+            
+            <p class="auth-switch">Back to <a href="{{ url_for('home') }}">Home</a></p>
+        </form>
+    </div>
+</div>
+{% endblock %}

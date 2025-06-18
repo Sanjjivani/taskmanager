@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/auth.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="auth-page">
+    <div class="auth-background"></div>
+    
+    <div class="auth-card policy-card">
+        <h2>Privacy Policy</h2>
+        <p class="auth-subtitle">Last updated: May 27, 2025</p>
+        
+        <div class="policy-content">
+            <h3>1. Information We Collect</h3>
+            <p>We collect information you provide during signup, such as your username, email, and password. We also collect usage data to improve our services.</p>
+            
+            <h3>2. How We Use Your Information</h3>
+            <p>Your information is used to provide and personalize TaskMaster services, process your requests, and communicate with you.</p>
+            
+            <h3>3. Data Sharing</h3>
+            <p>We do not sell your personal information. We may share data with service providers to operate TaskMaster or as required by law.</p>
+            
+            <h3>4. Data Security</h3>
+            <p>We implement reasonable measures to protect your data, but no system is completely secure. You use TaskMaster at your own risk.</p>
+            
+            <h3>5. Your Rights</h3>
+            <p>You may access, update, or delete your account information by contacting us. You may also opt out of certain communications.</p>
+            
+            <p>For the full Privacy Policy, please contact our support team.</p>
+        </div>
+        
+        <a href="{{ url_for('signup') }}" class="policy-back">Back to Sign Up</a>
+    </div>
+</div>
+{% endblock %}
