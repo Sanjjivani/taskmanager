@@ -57,7 +57,7 @@ Report Generation: PDFKit / jsPDF / CSV Export
 
 📦 Installation
 1. Clone the Repository
-git clone https://github.com/your-username/taskmaster.git
+git clone https://github.com/Sanjjivani/taskmanager
 cd taskmaster
 
 2. Install Dependencies
