@@ -1,119 +1,145 @@
-TaskMaster – Smart Task Management System
+🛡️ TaskMaster – Secure Task Management Application
 
-TaskMaster is a lightweight and intuitive task management application designed to help users efficiently create, track, and manage their daily tasks. The system offers seamless task operations, automated emails, and exportable reports, providing a complete productivity solution for individuals and teams.
+(Cybersecurity Learning Project)
 
-🚀 Features
-✔ Task Management
+TaskMaster is a task management web application developed as a hands-on learning project by a cybersecurity student.
 
-Create new tasks quickly with essential details.
+The goal of this project goes beyond basic functionality. It is designed to understand real-world web application behaviour, including authentication flow, user input handling, session management, and common security weaknesses, from both a defensive and testing perspective.
 
-Edit or update existing tasks.
+This application also serves as a practice target for manual penetration testing, helping to analyse how vulnerabilities such as XSS, SQL Injection, and authentication flaws can emerge in practical systems.
 
-Delete tasks instantly.
+🎯 Project Objectives (Cybersecurity Focus)
 
-Mark tasks as completed or pending.
+This project was built to help achieve the following learning goals:
 
-📧 Email Notifications
+Understand end-to-end web application workflow
 
-Automatically send task-related notifications to users.
+Analyse authentication and session management
 
-Trigger emails on task creation, updates, or due reminders (depends on configuration).
+Study user input handling and output rendering
 
-📄 Report Generation
+Identify and map OWASP Top 10 vulnerabilities
 
-Download task reports in PDF/CSV format.
+Improve awareness of secure coding practices
 
-Reports include completed tasks, pending tasks, and detailed activity logs.
+Gain confidence in manual web application testing
 
-Ideal for tracking productivity or maintaining documentation.
+Create a realistic app for safe vulnerability analysis
 
-👤 User-Friendly Dashboard
+🚀 Core Features
+🗂 Task Management
 
-Clean and minimalistic UI.
+Create, update, and delete tasks
 
-Quick overview of all tasks.
+Mark tasks as completed or pending
 
-Easy navigation for improved user experience.
+Dashboard-based task status overview
 
-🔐 Secure & Scalable
+👤 User Authentication
 
-Secure endpoints for task operations.
+User registration and login system
 
-Backend structured to scale with new features.
+Forgot-password and password reset functionality
+
+Session-based access control (learning-focused)
+
+📧 Email Functionality
+
+SMTP-based email system
+
+Used to study email workflows and related security risks
+
+Supports account-related actions (reset, notifications)
+
+🧭 User Interface
+
+Simple and clean UI for easy flow analysis
+
+Multiple pages to practise:
+
+DOM inspection
+
+Client-side testing
+
+JavaScript behaviour analysis
+
+🔐 Security Learning Scope
+
+This project is intentionally used to practise and understand:
+
+Input validation and sanitisation
+
+Authentication and authorisation logic
+
+Client-side vs server-side trust boundaries
+
+Session handling behaviour
+
+Common attack vectors, including:
+
+Cross-Site Scripting (XSS)
+
+Broken Authentication
+
+Security Misconfiguration
+
+Mapping application behaviour to the OWASP Top 10
+
+⚠️ Important Note:
+This application is developed strictly for educational and learning purposes.
+It is not intended for production use.
 
 🛠 Tech Stack
 
-(Modify based on your project)
+Frontend: HTML, CSS, JavaScript
 
-Frontend: HTML, CSS, JavaScript / React
+Backend: Python (Flask)
 
-Backend: Node.js / Express / Django / Spring Boot
+Database: Local database (learning environment)
 
-Database: MongoDB / MySQL / PostgreSQL
+Email: SMTP-based email handling
 
-Email Service: Nodemailer / SMTP / Email API
+Environment: Local development setup
 
-Report Generation: PDFKit / jsPDF / CSV Export
-
-📦 Installation
-1. Clone the Repository
-git clone https://github.com/Sanjjivani/taskmanager
-cd taskmaster
-
-2. Install Dependencies
-npm install
-
-
-or
-
-pip install -r requirements.txt
-
-3. Configure Environment Variables
-
-Create an .env file:
-
-PORT=5000
-DB_URL=your_database_url
-EMAIL_USER=your_email
-EMAIL_PASS=your_password
-
-4. Start the Server
-npm start
-
-📘 API Endpoints
-
-(Simplified overview — can be expanded)
-
-Method	Endpoint	Description
-POST	/tasks/create	Create a new task
-GET	/tasks	Get all tasks
-PATCH	/tasks/:id	Update task
-DELETE	/tasks/:id	Delete task
-GET	/report	Download task report
-POST	/send-mail	Send notification email
 📂 Project Structure
+taskmanager/
+│
+├── app.py                  # Main Flask application file
+│
+├── templates/              # HTML templates
+│   ├── index.html
+│   ├── login.html
+│   ├── forgot_password.html
+│   ├── privacy.html
+│   └── base.html
+│
+├── static/                 # Static assets
+│   ├── css/
+│   │   ├── main.css
+│   │   └── auth.css
+│   │
+│   └── js/
+│       ├── main.js
+│       └── auth.js
+│
+├── README.md               # Project documentation
+└── requirements.txt        # Python dependencies
 
-(Example — adjust according to your structure)
+🧪 Usage for Learning & Testing
 
-/taskmaster
- ├── /src
- │    ├── controllers
- │    ├── models
- │    ├── routes
- │    ├── utils
- │    └── views
- ├── .env
- ├── package.json
- └── README.md
+This application can be used to practise:
 
-📌 Future Enhancements
+Manual web application testing
 
-Task sharing between users
+Understanding request–response behaviour
 
-Team/Project workspaces
+Analysing authentication flow
 
-Calendar view
+Studying client-side JavaScript handling
 
-Mobile-friendly UI
+Identifying insecure input/output patterns
 
-Role-based permissions
+📌 Disclaimer
+
+This project is created only for learning, experimentation, and skill development.
+Any testing should be done locally on this application only.
